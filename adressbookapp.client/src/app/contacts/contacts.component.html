@@ -1,0 +1,20 @@
+<div class="contacts-container">
+  <h1>Contact List</h1>
+
+  <!-- Search Form -->
+  <div>
+    <label for="search">Search:</label>
+    <input type="text" id="search" [(ngModel)]="searchQuery" placeholder="Search contact">
+    <button (click)="searchContact()">Search</button>
+  </div>
+
+  <!-- Display  Contact -->
+  <div *ngIf="randomContact">
+    <h2>Contact Details</h2>
+    <div>
+      <p *ngIf="randomContact.name">Name: {{ randomContact.name.first }} {{ randomContact.name.last }}</p>
+      <p *ngIf="randomContact.email">Email: {{ randomContact.email }}</p>
+      <!--add more details-->
+    </div>
+  </div>
+</div>
