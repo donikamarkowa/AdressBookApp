@@ -1,0 +1,70 @@
+/* contacts.component.css */
+
+.contacts-container {
+  max-width: 600px;
+  margin: 50px auto; /* Променете този margin според вашите предпочитания */
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+  text-align: center;
+}
+
+  .contact-details p .highlight-label {
+    color: #4caf50;
+    ; /* Променете цвета според вашите предпочитания */
+    font-weight: bold;
+    margin-right: 5px; /* Променете ако искате разстоянието между етикета и данните */
+  }
+
+  .contact-details p {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .contact-details img {
+    margin-top: 20px;
+  }
+
+h1, h2 {
+  color: #333;
+  text-align: center;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Styling for contact details */
+p {
+  margin: 5px 0;
+  text-align: center;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+}

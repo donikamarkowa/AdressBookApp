@@ -9,7 +9,7 @@ namespace AdressBookApp.Server.Models
         public string City { get; set; } = null!;
         public string State { get; set; } = null!;
         public string Country { get; set; } = null!;
-        public int Postcode { get; set; }
+        public int Postcode { get; set; } 
         public Coordinates Coordinates { get; set; } = null!;
         public Timezone Timezone { get; set; } = null!;
     }

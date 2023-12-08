@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs'
 import { Contact } from '../app/contact.model';
 
@@ -7,17 +7,16 @@ import { Contact } from '../app/contact.model';
   providedIn: 'root'
 })
 export class ContactService {
-  private url = 'https://randomuser.me/api/';
+  private url = 'https://localhost:7145/api';
 
   constructor(private http: HttpClient) { }
 
   getRandomContact(): Observable<Contact> {
-    //return this.http.get<Contact>(`${this.url}/contact/randomcontact`);
-    return this.http.get<Contact>(`${this.url}/`);
+    return this.http.get<Contact>(`${this.url}/Contacts/randomcontact`);
   }
 
   searchContactByName(name: string): Observable<Contact> {
-    //return this.http.get<Contact>(`${this.url}/contact/searchcontact?name=${name}`);
-    return this.http.get<Contact>(`${this.url}/?name=${name}`);
+    const params = new HttpParams().set('name', name);
+    return this.http.get<Contact>(`${this.url}/Contacts/searchcontact`, { params });
   }
 }

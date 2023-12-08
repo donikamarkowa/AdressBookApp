@@ -20,14 +20,25 @@ export class ContactsComponent implements OnInit {
   }
 
   getRandomContact(): void {
-    this.contactService.getRandomContact().subscribe(data => {
-      this.randomContact = data;
-    });
+    this.contactService.getRandomContact().subscribe(
+      (data) => {
+        this.randomContact = data;
+        console.log(this.randomContact);
+      },
+      (error) => {
+        console.error('Error fetching random contact:', error);
+      });
   }
 
   searchContact(): void {
-    this.contactService.searchContactByName(this.searchQuery).subscribe(data => {
-      this.randomContact = data;
-    });
+    this.contactService.searchContactByName(this.searchQuery).subscribe(
+      (data) => {
+        this.randomContact = data;
+        console.log(this.randomContact);
+    },
+      (error) => {
+        console.error('Error fetching contact by name:', error);
+      }
+    );
   }
 }

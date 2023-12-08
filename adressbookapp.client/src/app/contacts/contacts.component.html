@@ -1,20 +1,49 @@
 <div class="contacts-container">
   <h1>Contact List</h1>
-
-  <!-- Search Form -->
+  <!--Search Form-->
   <div>
-    <label for="search">Search:</label>
-    <input type="text" id="search" [(ngModel)]="searchQuery" placeholder="Search contact">
+    <label for="search">Search by Name:</label>
+    <input type="text" id="search" [(ngModel)]="searchQuery" placeholder="Type Name...">
     <button (click)="searchContact()">Search</button>
   </div>
+  <!-- Display  Contact-->
+  <div *ngIf="randomContact && randomContact.results && randomContact.results.length > 0">
+    <h2>Contact Details</h2>
+    <div class="contact-details">
+      <div>
+        <p *ngIf="randomContact.results[0].name">
+          <span class="highlight-label">Name:</span>  {{ randomContact.results[0].name.first }} {{ randomContact.results[0].name.last }}
+        </p>
+        <p *ngIf="randomContact.results[0].dob">
+          <span class="highlight-label">Age:</span>  {{ randomContact.results[0].dob.age }}
+        </p>
+        <p *ngIf="randomContact.results[0].email">
+          <span class="highlight-label">Email:</span>  {{ randomContact.results[0].email }}
+        </p>
+        <p *ngIf="randomContact.results[0].phone">
+          <span class="highlight-label">Phone:</span> {{ randomContact.results[0].phone }}
+        </p>
+        <p *ngIf="randomContact.results[0].location">
+          <span class="highlight-label">Location:</span>  {{ randomContact.results[0].location.city }}
+        </p>
+        <p *ngIf="randomContact.results[0].nat">
+          <span class="highlight-label">Nationality:</span>  {{ randomContact.results[0].nat }}
+        </p>
+        <p *ngIf="randomContact.results[0].registered">
+          <span class="highlight-label">Registered at:</span>  {{ randomContact.results[0].registered.date }}
+        </p>
+        <img *ngIf="randomContact.results[0].picture" [src]="randomContact.results[0].picture.large" alt="Contact Picture">
+      </div>
+    </div>
+  </div>
 
-  <!-- Display  Contact -->
-  <div *ngIf="randomContact">
+  <!--<div *ngIf="randomContact">
     <h2>Contact Details</h2>
     <div>
       <p *ngIf="randomContact.name">Name: {{ randomContact.name.first }} {{ randomContact.name.last }}</p>
-      <p *ngIf="randomContact.email">Email: {{ randomContact.email }}</p>
-      <!--add more details-->
-    </div>
+      <p *ngIf="randomContact.email">Email: {{ randomContact.email }}</p>-->
+  <!--add more details-->
   </div>
-</div>
+
+
+

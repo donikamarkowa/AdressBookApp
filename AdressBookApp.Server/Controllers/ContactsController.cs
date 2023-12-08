@@ -1,7 +1,9 @@
 using AdressBookApp.Server.Models;
 using AdressBookApp.Server.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Text.Json;
+using System.Xml.Linq;
 
 namespace AdressBookApp.Server.Controllers
 {
@@ -17,17 +19,26 @@ namespace AdressBookApp.Server.Controllers
         }
 
         [HttpGet("randomcontact")]
-        public async Task<IActionResult> GetRandomUser()
+        public async Task<IActionResult> GetRandomContact()
         {
             var randomUser = await _contactService.GetRandomContact();
 
-            return Ok(randomUser);
+            if (randomUser != null)
+            {
+                return Ok(randomUser);
+            }
+            else
+            {
+                return NotFound($"Cannot generate random contact.");
+            }
+
         }
 
         [HttpGet("searchcontact")]
-        public async Task<IActionResult> SearchUserByName([FromQuery] string name)
+        public async Task<IActionResult> SearchContactByName([FromQuery] string name)
         {
             var user = await _contactService.GetUserByNameAsync(name);
+
 
             if (user != null)
             {
