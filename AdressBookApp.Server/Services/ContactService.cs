@@ -14,9 +14,6 @@ namespace AdressBookApp.Server.Services
 
         public async Task<Contact?> GetRandomContact()
         {
-            //var response = await _httpClient.GetFromJsonAsync<Contact>("");
-
-            //return response;
             try
             {
                 var response = await _httpClient.GetFromJsonAsync<Contact>("");
@@ -38,13 +35,6 @@ namespace AdressBookApp.Server.Services
 
         public async Task<Contact?> GetUserByNameAsync(string name)
         {
-            //using (var response = await _httpClient.GetAsync($"?name={name}"))
-            //{
-            //    response.EnsureSuccessStatusCode();
-            //    var json = await response.Content.ReadAsStringAsync();
-
-            //    return await response.Content.ReadFromJsonAsync<Contact>();
-            //}
             try
             {
                 var response = await _httpClient.GetFromJsonAsync<Contact>($"?name={name}");

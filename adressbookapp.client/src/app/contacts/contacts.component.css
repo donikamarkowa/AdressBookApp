@@ -1,8 +1,6 @@
-/* contacts.component.css */
-
 .contacts-container {
   max-width: 600px;
-  margin: 50px auto; /* Променете този margin според вашите предпочитания */
+  margin: 50px auto;
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f4f4;
@@ -16,9 +14,8 @@
 
   .contact-details p .highlight-label {
     color: #4caf50;
-    ; /* Променете цвета според вашите предпочитания */
     font-weight: bold;
-    margin-right: 5px; /* Променете ако искате разстоянието между етикета и данните */
+    margin-right: 5px; 
   }
 
   .contact-details p {
@@ -54,7 +51,6 @@ button {
   border-radius: 5px;
 }
 
-/* Styling for contact details */
 p {
   margin: 5px 0;
   text-align: center;

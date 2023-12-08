@@ -1,15 +1,3 @@
-//export interface Contact {
-//  name: {
-//    title: string;
-//    first: string;
-//    last: string;
-//  };
-//  email: string;
-//  city: string;
-//  phone: string
-//}
-
-
 export interface Contact {
   info: {
     page: number;
